@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "typeRoots": ["node_modules/@types", "@types"],
+    // Ensure that .d.ts files are created by tsc, but not .js files
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    // Ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": true
+  },
+  "include": ["src", "main.ts"]
+}

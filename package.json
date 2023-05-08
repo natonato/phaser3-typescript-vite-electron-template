@@ -1,0 +1,44 @@
+{
+  "name": "phaser3-typescript-electron",
+  "version": "1.0.0",
+  "description": "Phaser3 Typescript Electron Example",
+  "homepage": "/",
+  "main": "main.ts",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "start:nobrowser": "cross-env BROWSER_OPEN=false vite",
+    "electron": "cross-env ELECTRON_DEBUG=true electron .",
+    "hot": "concurrently -k \"npm run start:nobrowser\" \"cross-env ELECTRON_HOT=true npm run electron \"",
+    "cold": "npm run build && electron .",
+    "exe:portable": "electron-packager . phaser-electron-app-name --platform win32 --arch x64 --overwrite --out exe"
+  },
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^23.2.0",
+    "electron-packager": "^17.1.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "process": "^0.11.10",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "keywords": [],
+  "author": {
+    "name": "natonato",
+    "email": "",
+    "url": "https://github.com/natonato"
+  },
+  "license": "MIT",
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": [
+    "src"
+  ],
+  "type": "commonjs"
+}

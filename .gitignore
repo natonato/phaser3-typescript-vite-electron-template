@@ -1,0 +1,12 @@
+.cache
+
+# build
+build
+dist
+
+# module
+node_modules
+
+# packager
+exe
+out
