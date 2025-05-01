@@ -9,9 +9,11 @@ if (
   require("electron-reload")(__dirname, {});
 }
 
+let mainWindow;
+
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     autoHideMenuBar: true,
     center: true,
     // useContentSize: true,
@@ -21,7 +23,8 @@ function createWindow() {
     minWidth: 1280,
     minHeight: 720,
     webPreferences: {
-      nodeIntegration: true,
+      preload: path.join(__dirname, "preload.js"), // preload 파일 경로
+      contextIsolation: true,
     },
   });
 
@@ -62,5 +65,10 @@ app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
-// In this file you can include the rest of your app"s specific main process
-// code. You can also put them in separate files and require them here.
+ipcMain.on("toggle-fullscreen", (event) => {
+  const fullScreenMode = mainWindow.fullScreen;
+  mainWindow.setFullScreen(!fullScreenMode);
+
+  // Electron과 Phaser의 상태 동기화
+  mainWindow.webContents.send("fullscreen-changed", !fullScreenMode);
+});
