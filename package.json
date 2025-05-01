@@ -7,8 +7,8 @@
   "scripts": {
     "build": "vite build",
     "start:nobrowser": "cross-env BROWSER_OPEN=false vite",
-    "electron": "cross-env ELECTRON_DEBUG=true electron .",
-    "hot": "concurrently -k \"npm run start:nobrowser\" \"cross-env ELECTRON_HOT=true npm run electron \"",
+    "electron": "npm run build && cross-env ELECTRON_DEBUG=true electron .",
+    "hot": "concurrently -k \"npm run start:nobrowser\" \"cross-env ELECTRON_HOT=true npm run electron .\"",
     "cold": "npm run build && electron .",
     "exe:portable": "electron-packager . phaser-electron-app-name --platform win32 --arch x64 --overwrite --out exe",
     "lint": "eslint . --ext .ts"
