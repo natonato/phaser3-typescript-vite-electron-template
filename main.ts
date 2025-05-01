@@ -35,7 +35,7 @@ function createWindow() {
 
   if (process.env.ELECTRON_DEBUG === "true") {
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools({ mode: "detach" });
   }
 
   // keep ratio when scaling
