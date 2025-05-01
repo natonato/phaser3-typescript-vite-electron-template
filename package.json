@@ -5,13 +5,13 @@
   "homepage": "/",
   "main": "main.ts",
   "scripts": {
-    "start": "vite",
     "build": "vite build",
     "start:nobrowser": "cross-env BROWSER_OPEN=false vite",
     "electron": "cross-env ELECTRON_DEBUG=true electron .",
     "hot": "concurrently -k \"npm run start:nobrowser\" \"cross-env ELECTRON_HOT=true npm run electron \"",
     "cold": "npm run build && electron .",
-    "exe:portable": "electron-packager . phaser-electron-app-name --platform win32 --arch x64 --overwrite --out exe"
+    "exe:portable": "electron-packager . phaser-electron-app-name --platform win32 --arch x64 --overwrite --out exe",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "phaser": "^3.60.0"
@@ -22,6 +22,7 @@
     "electron": "^23.2.0",
     "electron-packager": "^17.1.1",
     "electron-reload": "^2.0.0-alpha.1",
+    "eslint": "^8.57.0",
     "process": "^0.11.10",
     "typescript": "^5.0.4",
     "vite": "^4.3.5",
