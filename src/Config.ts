@@ -12,6 +12,6 @@ export const config: Phaser.Types.Core.GameConfig = {
     height: 1080,
     fullscreenTarget: "phaser-id",
   },
-
   scene: [SceneOne, SceneTwo],
+  autoFocus: true,
 };
