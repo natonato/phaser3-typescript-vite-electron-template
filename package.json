@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "phaser": "^3.60.0"
+    "phaser": "3.87.0"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",
