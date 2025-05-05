@@ -1,39 +1,52 @@
 # Phaser-Typescript-Vite-Electron Template
 
-- Translator used
+**version : 2.0**
 
 ## Simple Template With
+
+![Phaser](https://img.shields.io/badge/phaser-A100FF.svg?style=for-the-badge&logo=phaser&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Electron.js](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white)
 
 - [Phaser](https://phaser.io/) : HTML5 Game Framework
 - [TypeScript](https://www.typescriptlang.org/) : Better than JavaScript
 - [Vite](https://vitejs.dev/) : To Build Project
 - [Electron](https://electronjs.org/) : To Run game standalone
-  - [Electron-Packager](https://github.com/electron/electron-packager) : And package it.
+  - [Electron-Packager](https://github.com/electron/packager) : And package it.
 
 And
 
 - Fixed Ratio (16:9)
-- Simple Scene movement & Quit App test
+- Simple Scene movement & Quit App
+- Option scene
+  - Change resolution / Toggle fullscreen
+  - Change language
+  - Change Sound/SFX Volume
+- Grayscale Shader Example
 - Hot Reload Electron
 - Generate StandAlone exe file
 
 ## Project Structure
 
 ```
-|   main.ts
+|   main.js
+|   index.html
++---public/assets
+    +---data
+    +---fonts
+    \---...
 \---src
     |   Game.ts
-    |   index.html
+    |   Config.ts
     +---assets
     \---scene
-            SceneOne.ts
-            SceneTwo.ts
+        |   TitleScene.ts
+        |   GameScene.ts
+        \---...
 ```
 
-`main.ts` File is entry point for Electron
-`src/index.html` File is entry point for phaser
-`Game.ts` File is where game created
-`assets` Folder have assets
+`main.js` Entry point for Electron
+`index.html` Entry point for phaser
+`Game.ts` Where game created
+`public/assets` Assets folder
 
 ## Getting Started
 
@@ -45,50 +58,52 @@ npm install
 
 ### Build
 
+- Might not work in normal browser
+
 ```sh
 npm run build
 ```
 
-### Run with browser (port 3000)
-
-```sh
-npm run start
-```
-
-### Run with electron (locally, hot reloading)
-
-```sh
-npm run hot
-```
-
-### Run with electron (with build)
+### Run with electron
 
 ```sh
 npm run cold
 ```
 
-### Generate standalone exe (In exe folder)
+### Run with electron and chrome dev tool
+
+```sh
+npm run debug
+```
+
+### Run with electron and hot reloading
+
+```sh
+npm run hot
+```
+
+### Run with electron and chrome dev tool and hot reloading
+
+```sh
+npm run debug:hot
+```
+
+### Generate exe
 
 ```sh
 npm run exe:portable
 ```
 
-## Current...issue? something
+## Music/SFX file Source
 
-- ESM - Commonjs compatibility
+[<img src="https://img.shields.io/badge/pixabay-2EC66D?style=for-the-badge&logo=pixabay&logoColor=white">](https://pixabay.com/)
 
-  - Electron provides IPC for communication between the client (Phaser) and the server (electron)
-  - Vite use native ESM
-  - Electron do not support ESM ([issue](https://github.com/electron/electron/issues/21457))
-  - So maybe I should convert the ESM of Vite to CJS and use it, but it just didn't work out. (IDK Why)
+## Font file Source
 
-- Electron `useContentSize` not working properly
+[Link](https://cactus.tistory.com/193)
 
-  - Electron appears to include a title bar and menu in width/height by default
-  - `useContentSize` option was expected to solve this problem because it takes the size of the browser window and uses it, but the problem is that the phaser has set the 'height:100%' option throughout the document
+## A feature I wanted to add but failed to
 
-- Running Electron with Devtool, keyboard input ignored
+HMR
 
-  - Devtool snatched keyboard input
-
-- There was a bug in the Electron `24.x.x`, so I used the 23 version instead
+- After modifying and saving the code, refresh only the current phaser scene, not the entire electron app.
