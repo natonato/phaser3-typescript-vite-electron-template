@@ -29,8 +29,8 @@ export default class LoadingScene extends BaseScene {
   }
 
   create(data: { settings: any }) {
-    super.create(data);
     this.registry.set("settings", data.settings);
+    super.create(data);
 
     setTimeout(() => this.scene.start("TitleScene"), 2000);
 

@@ -41,14 +41,16 @@ export default class BaseScene extends Phaser.Scene {
 
     const settings = this.registry.get("settings");
 
-    this.currentResolutionIdx = settings?.currentResolutionIdx ?? 1;
-    this.fullscreenFlag = settings?.fullscreenFlag ?? false;
-    this.volume = {
-      main: settings?.volume?.main ?? 10,
-      effect: settings?.volume?.effect ?? 10,
-    };
+    if (settings) {
+      this.currentResolutionIdx = settings.currentResolutionIdx ?? 1;
+      this.fullscreenFlag = settings.fullscreenFlag ?? false;
+      this.volume = {
+        main: settings.volume?.main ?? 10,
+        effect: settings.volume?.effect ?? 10,
+      };
 
-    this.localization.setLanguage(settings?.currentLanguage || "en");
+      this.localization.setLanguage(settings.currentLanguage);
+    }
 
     this.soundManager = SoundManager.getInstance();
     this.soundManager.init(this);
