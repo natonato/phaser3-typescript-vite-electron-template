@@ -1,0 +1,13 @@
+{
+  "startGame": "Start Game",
+  "options": "Options",
+  "exitGame": "Exit Game",
+
+  "languageText": "English",
+  "languageSelect": "Language",
+  "resolution": "Resolution",
+  "fullscreen": "Full Screen",
+  "mainVolume": "Main Volume",
+  "effectVolume": "Effect Volume",
+  "returnToTitle": "Return To Title"
+}

@@ -1,0 +1,13 @@
+{
+  "startGame": "게임 시작",
+  "options": "옵션",
+  "exitGame": "게임 종료",
+
+  "languageText": "한국어",
+  "languageSelect": "언어 선택",
+  "resolution": "해상도",
+  "fullscreen": "전체화면",
+  "mainVolume": "메인 음량",
+  "effectVolume": "이펙트 음량",
+  "returnToTitle": "타이틀 화면으로"
+}

@@ -1,0 +1,13 @@
+{
+  "startGame": "ゲームを始める",
+  "options": "オプション",
+  "exitGame": "ゲームを終了する",
+
+  "languageText": "日本語",
+  "languageSelect": "言語",
+  "resolution": "解像度",
+  "fullscreen": "全画面",
+  "mainVolume": "メイン音量",
+  "effectVolume": "エフェクト音量",
+  "returnToTitle": "タイトルに戻る"
+}
